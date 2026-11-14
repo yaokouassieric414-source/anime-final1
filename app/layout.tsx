@@ -1,7 +1,10 @@
+
 import type { Metadata } from 'next';
+import type { ReactNode } from 'react';
 import Script from 'next/script';
 import { Inter } from 'next/font/google';
 import './globals.css';
+
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { ThemeProvider } from '@/components/ThemeProvider';
@@ -26,30 +29,39 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return (
     <html lang="fr" suppressHydrationWarning>
-  
-      <body className={`${inter.className} bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 min-h-screen flex flex-col`}>
+      <body
+        className={`${inter.className} bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 min-h-screen flex flex-col`}
+      >
         <ThemeProvider>
           <FavoritesProvider>
             <Header />
+
             <main className="flex-1">
               {children}
             </main>
+
             <Footer />
             <AdPopup />
-    </FavoritesProvider>
-  </ThemeProvider>
-  <Script
-  id="monetag-vignette"
-  strategy="afterInteractive"
-  dangerouslySetInnerHTML={{
-    __html: `(function(s){s.dataset.zone='12257819',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))`,
-  }}
-/>
-</body>
-</html>
-);
+          </FavoritesProvider>
+        </ThemeProvider>
+
+        <Script
+          id="monetag-vignette"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(s){
+                s.dataset.zone='12257819';
+                s.src='https://n6wxm.com/vignette.min.js';
+              })(document.body.appendChild(document.createElement('script')));
+            `,
+          }}
+        />
+      </body>
+    </html>
+  );
 }
