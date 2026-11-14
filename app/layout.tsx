@@ -41,7 +41,10 @@ export default function RootLayout({
             <AdPopup />
           </FavoritesProvider>
         </ThemeProvider>
+        <script
+  dangerouslySetInnerHTML={{
+    __html: `(function(s){s.dataset.zone='12257819',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))`,
+  }}
+/>
       </body>
     </html>
-  );
-}
