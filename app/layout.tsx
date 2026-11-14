@@ -9,7 +9,6 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { FavoritesProvider } from '@/lib/FavoritesContext';
-import { AdPopup } from '@/components/AdPopup';
 import { SITE_NAME, SITE_DESCRIPTION } from '@/lib/config';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -45,25 +44,10 @@ export default function RootLayout({
             </main>
 
             <Footer />
-            <AdPopup />
           </FavoritesProvider>
         </ThemeProvider>
 
-        {/* Publicité Monetag */}
-        <Script
-          id="monetag-vignette"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function(s){
-                s.dataset.zone='12257819';
-                s.src='https://n6wxm.com/vignette.min.js';
-              })(document.body.appendChild(document.createElement('script')));
-            `,
-          }}
-        />
-
-        {/* Deuxième publicité */}
+        {/* Publicité unique */}
         <Script
           src="https://quge5.com/88/tag.min.js"
           strategy="afterInteractive"
