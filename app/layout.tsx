@@ -49,6 +49,7 @@ export default function RootLayout({
           </FavoritesProvider>
         </ThemeProvider>
 
+        {/* Publicité Monetag */}
         <Script
           id="monetag-vignette"
           strategy="afterInteractive"
@@ -60,6 +61,14 @@ export default function RootLayout({
               })(document.body.appendChild(document.createElement('script')));
             `,
           }}
+        />
+
+        {/* Deuxième publicité */}
+        <Script
+          src="https://quge5.com/88/tag.min.js"
+          strategy="afterInteractive"
+          data-zone="309856"
+          data-cfasync="false"
         />
       </body>
     </html>
