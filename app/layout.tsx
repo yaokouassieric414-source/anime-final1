@@ -26,6 +26,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr" suppressHydrationWarning>
+    <head>
+  <meta name="monetag" content="93ae72e3a45856c0692ffec27b3c796f" />
+</head>
       <body className={`${inter.className} bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 min-h-screen flex flex-col`}>
         <ThemeProvider>
           <FavoritesProvider>
